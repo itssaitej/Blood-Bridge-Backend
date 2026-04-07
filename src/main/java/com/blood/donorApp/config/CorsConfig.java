@@ -17,7 +17,7 @@ public class CorsConfig
             public void addCorsMappings(CorsRegistry registry) 
             {
                 registry.addMapping("/**")
-                        .allowedOrigins("*") // change later to frontend URL
+                        .allowedOrigins("https://blood-bridge-neon.vercel.app") // change later to frontend URL
                         .allowedMethods("*")
                         .allowedHeaders("*");
             }
