@@ -13,8 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/donors")
-@CrossOrigin(origins = "http://localhost:3000",
-    "https://your-vercel-url.vercel.app")
+@CrossOrigin(origins = "*")
 public class DonorController 
 { 
 	@Autowired
