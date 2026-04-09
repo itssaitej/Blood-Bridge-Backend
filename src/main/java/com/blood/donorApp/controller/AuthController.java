@@ -58,7 +58,7 @@ public ResponseEntity<?> login(@RequestBody LoginRequest request) {
             Map.of(
                 "token", token,
                 "username", user.getUsername(),
-                "name", user.getName()  != null ? user.getName() : ""
+                "name", user.getName()
             )
         );
 
