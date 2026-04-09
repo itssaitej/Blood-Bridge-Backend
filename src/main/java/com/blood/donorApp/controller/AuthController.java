@@ -46,8 +46,6 @@ public class AuthController
     
 
     // LOGIN
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest request) 
    @PostMapping("/login")
 public ResponseEntity<?> login(@RequestBody LoginRequest request) {
     try {
