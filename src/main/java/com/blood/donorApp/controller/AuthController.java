@@ -58,7 +58,7 @@ public class AuthController
             Map.of(
                 "token", token,
                 "username", user.getUsername(),
-                "name", user.getName()
+                "name", user.getName()  != null ? user.getName() : ""
             )
         );
     }
