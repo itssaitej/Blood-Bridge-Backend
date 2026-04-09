@@ -20,7 +20,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000",
+    "https://blood-bridge-neon.vercel.app")
 public class AuthController 
 {
 
