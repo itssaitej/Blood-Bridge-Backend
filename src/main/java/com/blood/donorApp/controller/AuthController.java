@@ -47,10 +47,10 @@ public class AuthController
 
     // LOGIN
    @PostMapping("/login")
-public ResponseEntity<?> login(@RequestBody LoginRequest request) {
-    try {
+public ResponseEntity<?> login(@RequestBody LoginRequest request) 
+    {
         String token = authService.login(request.getUsername(), request.getPassword());
-
+        //String name = authService.login(request.getUsername(), request.getPassword());
         User user = userRepo.findByUsername(request.getUsername())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
@@ -61,11 +61,7 @@ public ResponseEntity<?> login(@RequestBody LoginRequest request) {
                 "name", user.getName()
             )
         );
-
-    } catch (Exception e) {
-        return ResponseEntity.status(500).body("Login error: " + e.getMessage());
     }
-}
     
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUsers() 
