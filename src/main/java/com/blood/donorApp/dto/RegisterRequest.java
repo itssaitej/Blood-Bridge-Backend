@@ -6,7 +6,7 @@ public class RegisterRequest
 {
 	private String username;
     private String password;
-    //private Long id;
+    private Long id;
     
     private String name;
     private String bloodGroup;
@@ -17,10 +17,10 @@ public class RegisterRequest
    
     public RegisterRequest() {}
   
-    public RegisterRequest(String username,String password,String name, String bloodGroup, String location, String city, String area, boolean available)
+    public RegisterRequest(Long id,String username,String password,String name, String bloodGroup, String location, String city, String area, boolean available)
     {
     	this.username=username;
-    	//this.id=id;
+    	this.id=id;
     	this.password=password;
     	this.name = name;
         this.bloodGroup = bloodGroup;
@@ -94,15 +94,15 @@ public class RegisterRequest
     	this.username=username;
     }
     
-    //public Long getId() 
-   // {
-   //     return id;
-  //  }
+    public Long getId() 
+    {
+       return id;
+    }
 
-   // public void setId(Long id) 
-  //  {
-  //      this.id = id;
-  //  }
+    public void setId(Long id) 
+    {
+        this.id = id;
+    }
     
     public String getPassword() 
     {
