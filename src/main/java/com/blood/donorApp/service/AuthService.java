@@ -12,6 +12,7 @@ package com.blood.donorApp.service;
 	import org.springframework.stereotype.Service;
 
 	@Service
+		@Transactional
 	public class AuthService 
 	{
  
