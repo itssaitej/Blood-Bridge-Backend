@@ -20,7 +20,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "https://blood-bridge-backend-production.up.railway.app")
+@CrossOrigin(origins = "https://blood-bridge-neon.vercel.app")
 public class AuthController 
 {
 
@@ -46,21 +46,25 @@ public class AuthController
 
     // LOGIN
    @PostMapping("/login")
-public ResponseEntity<?> login(@RequestBody LoginRequest request) 
-    {
+public ResponseEntity<?> login(@RequestBody LoginRequest request) {
+    try {
         String token = authService.login(request.getUsername(), request.getPassword());
-        //String name = authService.login(request.getUsername(), request.getPassword());
+
         User user = userRepo.findByUsername(request.getUsername())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        return ResponseEntity.ok(
-            Map.of(
+        return ResponseEntity.ok(Map.of(
                 "token", token,
                 "username", user.getUsername(),
                 "name", user.getName()
-            )
-        );
+        ));
+
+    } catch (Exception e) {
+        return ResponseEntity.status(401).body(Map.of(
+                "error", e.getMessage()
+        ));
     }
+}
     
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUsers() 
