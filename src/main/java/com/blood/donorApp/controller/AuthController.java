@@ -38,10 +38,16 @@ public class AuthController
 
     // REGISTER
     @PostMapping("/register")
-    public String register(@Valid @RequestBody RegisterRequest request) 
-    {
-        return authService.register(request);
+public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest request) {
+    try {
+        String response = authService.register(request);
+        return ResponseEntity.ok(Map.of("message", response));
+    } catch (Exception e) {
+        return ResponseEntity.badRequest().body(Map.of(
+            "error", e.getMessage()
+        ));
     }
+}
     
 
     // LOGIN
