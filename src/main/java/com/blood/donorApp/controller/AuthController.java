@@ -23,7 +23,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @CrossOrigin(origins = {
     "http://localhost:3000",
     "https://blood-bridge-neon.vercel.app"
-}")
+})
 public class AuthController 
 {
 
