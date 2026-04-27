@@ -6,6 +6,7 @@ package com.blood.donorApp.service;
 	import com.blood.donorApp.model.Donor;
 	import com.blood.donorApp.repository.UserRepository;
 	import com.blood.donorApp.repository.DonorRepository;
+import jakarta.transaction.Transactional;
 
 	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.security.crypto.password.PasswordEncoder;
